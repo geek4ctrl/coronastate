@@ -11,16 +11,28 @@ import { CoronaService } from './corona.service';
 export class AppComponent {
   title = 'corona state';
   allInformation: any;
+  allCountries: any;
 
   constructor(public http: HttpClient, public coronaService: CoronaService, public sanitizer: DomSanitizer) {
     this.getInformation();
+    this.getCountries();
   }
 
   getInformation() {
     this.coronaService.getInformation().subscribe(allInformation => {
       if (allInformation) {
         this.allInformation = allInformation;
-        console.log(allInformation);
+        console.log('All information: ', allInformation);
+      }
+    });
+  }
+
+  getCountries() {
+    this.coronaService.getCountries().subscribe(allCountries => {
+      if (allCountries) {
+        this.allCountries = allCountries;
+        console.log('All countries: ', allCountries);
+        allCountries.sort((a, b) => (a.cases < b.cases ? 1 : -1));
       }
     });
   }

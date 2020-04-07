@@ -1,9 +1,9 @@
 <div>
   <div class="clr-row clr-align-items-center">
 
-    <div class="clr-col-8" style="display: flex;">
+    <div class="clr-col-lg-8 clr-col-md-12 clr-col-sm-12" style="display: flex;">
 
-      <div class="clr-col-3">
+      <div class="clr-col-lg-3 clr-col-md-3 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -12,8 +12,9 @@
               <div class="card-block" style="display: flex;">
 
                 <div class="clr-col">
-                  <div class="clr-row" style="color: rgb(140, 149, 170) ; font-weight: bold;">Today's Cases</div>
-                  <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.todayCases}}</div>
+                  <div class="clr-row" style="color: rgb(140, 149, 170) ; font-weight: bold;">Cases Today</div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                    {{allInformation.todayCases | number:'':''}}</div>
                 </div>
 
                 <div class="clr-col">
@@ -25,7 +26,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3">
+      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -35,7 +36,8 @@
 
                 <div class="clr-col">
                   <div class="clr-row" style="color: #C1C5CF; font-weight: bold;">Recovered</div>
-                  <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.recovered}}</div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                    {{allInformation.recovered | number:'':''}}</div>
                 </div>
 
                 <div class="clr-col">
@@ -47,7 +49,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3">
+      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -57,7 +59,8 @@
 
                 <div class="clr-col">
                   <div class="clr-row" style="color: #C1C5CF; font-weight: bold;">Active Cases</div>
-                  <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.active}}</div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                    {{allInformation.active | number:'':''}}</div>
                 </div>
 
                 <div class="clr-col">
@@ -69,7 +72,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3">
+      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -78,8 +81,9 @@
               <div class="card-block" style="display: flex;">
 
                 <div class="clr-col">
-                  <div class="clr-row" style="color: #C1C5CF; font-weight: bold;">Today's Death</div>
-                  <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.deaths}}</div>
+                  <div class="clr-row" style="color: #C1C5CF; font-weight: bold;">Death Today</div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                    {{allInformation.deaths | number:'':''}}</div>
                 </div>
 
                 <div class="clr-col">
@@ -93,14 +97,14 @@
 
     </div>
 
-    <div class="clr-col-4" style="display: flex;">
+    <div class="clr-col-lg-4 clr-col-md-12 clr-col-sm-12" style="display: flex;">
 
       <div class="clr-col-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
 
-              <div class="card-block">
+              <div class="card-block" style="height: 10rem;">
 
                 <div class="clr-row">
                   <h3 style="color: #36373F; font-weight: bold;">Ratio of recovery</h3>
@@ -112,12 +116,14 @@
 
                 <div class="clr-row">
                   <div class="clr-col">
-                    <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.cases}} Affected
+                    <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                      {{allInformation.cases | number:'':''}} Affected
                     </div>
                   </div>
 
                   <div class="clr-col">
-                    <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.recovered}}
+                    <div class="clr-row" style="color: #36373F; font-weight: bold;">
+                      {{allInformation.recovered | number:'':''}}
                       Recovered
                     </div>
 
@@ -136,7 +142,7 @@
 
   <div class="clr-row clr-align-items-center">
     <div class="clr-col">
-      <div class="clr-row">
+      <div class="clr-row" style="margin-top: -5.3rem;">
         <div class="clr-col-8" style="font-weight: bold; padding-left: 50px;">
           COVID - 19 Affected Areas
         </div>
@@ -149,21 +155,46 @@
       </div>
 
       <div class="clr-row">
-
+        <p>Map of the world</p>
       </div>
     </div>
 
     <div class="clr-col" style="margin-top: 4.5rem;">
       <div class="clr-row">
-        <div class="clr-col-12">
+        <div class="clr-col-12" style="font-weight: bold;">
           Top Countries
         </div>
       </div>
 
-      <div class="clr-row" style="justify-content: flex-start;">
+      <div class="clr-row" style="justify-content: flex-start;"
+        *ngFor="let country of allCountries | slice:0:3; let i=index">
+        <div class="clr-col-5">
+          <a href="..." class="card clickable">
+            <div class="card-img">
+            </div>
+            <div class="card-block" style="display: flex;">
 
+              <div class="clr-col" style="text-align: left;">
+                <div class="clr-row" style="color: #C1C5CF; font-weight: bold; justify-content: left;">
+                  {{country.country}}</div>
+                <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
+                  {{allInformation.cases | number:'':''}} - Affected </div>
+                <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
+                  {{allInformation.recovered | number:'':''}} - Recovered
+                </div>
+              </div>
+
+              <div class="clr-col">
+                <img src="https://img.icons8.com/nolan/64/bullish.png" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="clr-col-6"></div>
+      </div>
+
+      <!-- <div class="clr-row" style="justify-content: flex-start;">
         <div class="clr-col-4">
-
           <a href="..." class="card clickable">
             <div class="card-img">
             </div>
@@ -179,12 +210,31 @@
               </div>
             </div>
           </a>
-
         </div>
-
         <div class="clr-col-6"></div>
-
       </div>
+
+      <div class="clr-row" style="justify-content: flex-start;">
+        <div class="clr-col-4">
+          <a href="..." class="card clickable">
+            <div class="card-img">
+            </div>
+            <div class="card-block" style="display: flex;">
+
+              <div class="clr-col">
+                <div class="clr-row" style="color: #C1C5CF; font-weight: bold;">China</div>
+                <div class="clr-row" style="color: #36373F; font-weight: bold;">{{allInformation.deaths}}</div>
+              </div>
+
+              <div class="clr-col">
+                <img src="https://img.icons8.com/nolan/64/bullish.png" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="clr-col-6"></div>
+      </div> -->
+
     </div>
 
   </div>

@@ -16,7 +16,20 @@ export class CoronaService {
           observer.next(games);
         },
         error => {
-          observer.error('Could not get games');
+          observer.error('Could not get all information');
+        }
+      );
+    });
+  }
+
+  getCountries(): Observable<any[]> {
+    return new Observable(observer => {
+      this.http.get(`https://corona.lmao.ninja/countries`).subscribe(
+        (games: any[]) => {
+          observer.next(games);
+        },
+        error => {
+          observer.error('Could not get countries');
         }
       );
     });
