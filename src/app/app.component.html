@@ -18,7 +18,8 @@
                 </div>
 
                 <div class="clr-col">
-                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                  <!-- <img src="https://img.icons8.com/nolan/64/bullish.png" /> -->
+                  <img src="../assets/calendar.png" style="width: 2rem; height: 2rem;" />
                 </div>
               </div>
             </a>
@@ -41,7 +42,8 @@
                 </div>
 
                 <div class="clr-col">
-                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                  <!-- <img src="https://img.icons8.com/nolan/64/bullish.png" /> -->
+                  <img src="../assets/recovered.png" style="width: 2rem; height: 2rem;" />
                 </div>
               </div>
             </a>
@@ -64,7 +66,8 @@
                 </div>
 
                 <div class="clr-col">
-                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                  <!-- <img src="https://img.icons8.com/nolan/64/bullish.png" /> -->
+                  <img src="../assets/on.png" style="width: 2rem; height: 2rem;" />
                 </div>
               </div>
             </a>
@@ -87,7 +90,8 @@
                 </div>
 
                 <div class="clr-col">
-                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                  <!-- <img src="https://img.icons8.com/nolan/64/bullish.png" /> -->
+                  <img src="../assets/death.png" style="width: 2rem; height: 2rem;" />
                 </div>
               </div>
             </a>
@@ -111,7 +115,11 @@
                 </div>
 
                 <div class="clr-row">
-                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                  <!-- <img src="https://img.icons8.com/nolan/64/bullish.png" /> -->
+                  <img src="../assets/connected.png" style="width: 7rem; height: 5rem;" />
+
+                  <!-- <mdb-simple-chart [percent]="56" [barColor]="'4CAF50'" [animate]="{duration: 1000, enabled: true}"></mdb-simple-chart> -->
+
                 </div>
 
                 <div class="clr-row">
@@ -178,9 +186,9 @@
                 <div class="clr-row" style="color: #C1C5CF; font-weight: bold; justify-content: left;">
                   {{country.country}}</div>
                 <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
-                  {{allInformation.cases | number:'':''}} - Affected </div>
+                  {{country.cases | number:'':''}} - Affected </div>
                 <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
-                  {{allInformation.recovered | number:'':''}} - Recovered
+                  {{country.recovered | number:'':''}} - Recovered
                 </div>
               </div>
 
@@ -238,4 +246,36 @@
     </div>
 
   </div>
+
+  <div class="clr-row" style="margin: 1rem;">
+    <div class="clr-row">
+
+      <div class="clr-col">
+        <img src="../assets/medicine.png" style="width: 15rem; height: 10rem;" />
+      </div>
+      <div class="clr-col">
+        <div class="clr-row"><button class="btn btn-primary">News & Update</button></div>
+        <div class="clr-row">
+          <h4 style="bold">5 Symptoms of Corona Virus that you should know</h4>
+        </div>
+        <div class="clr-row"><button class="btn btn-link">Read More <clr-icon shape="arrow"></clr-icon></button></div>
+      </div>
+
+    </div>
+    <div class="clr-row">
+
+      <div class="clr-col">
+        <img src="../assets/gift.png" style="width: 15rem; height: 10rem;" />
+      </div>
+      <div class="clr-col">
+        <div class="clr-row"><button class="btn btn-primary">Donate</button></div>
+        <div class="clr-row">
+          <h4 style="bold">Donate to 3rd world countries which are suffering</h4>
+        </div>
+        <div class="clr-row"><button class="btn btn-link">Donate Now <clr-icon shape="arrow"></clr-icon></button></div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
