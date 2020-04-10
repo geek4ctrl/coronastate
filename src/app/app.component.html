@@ -1,9 +1,9 @@
 <div>
   <div class="clr-row clr-align-items-center">
 
-    <div class="clr-col-lg-8 clr-col-md-12 clr-col-sm-12" style="display: flex;">
+    <div class="clr-col-lg-8 clr-col-md-12 clr-col-sm-12 resize">
 
-      <div class="clr-col-lg-3 clr-col-md-3 clr-col-sm-12">
+      <div class="clr-col-lg-3 clr-col-md-6 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
+      <div class="clr-col-lg-3 clr-col-md-6 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
+      <div class="clr-col-lg-3 clr-col-md-6 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="clr-col-3 clr-col-md-3 clr-col-sm-12">
+      <div class="clr-col-lg-3 clr-col-md-6 clr-col-sm-12">
         <div class="clr-row">
           <div class="clr-col-lg-10 clr-col-12">
             <a href="..." class="card clickable">
@@ -142,8 +142,8 @@
   </div>
 
   <div class="clr-row clr-align-items-center">
-    <div class="clr-col">
-      <div class="clr-row" style="margin-top: -5.3rem;">
+    <div class="clr-col-lg-6 clr-col-md-12 clr-col-sm-12">
+      <div class="clr-row">
         <div class="clr-col-8" style="font-weight: bold; padding-left: 50px;">
           COVID - 19 Affected Areas
         </div>
@@ -160,38 +160,76 @@
       </div>
     </div>
 
-    <div class="clr-col" style="margin-top: 4.5rem;">
-      <div class="clr-row">
-        <div class="clr-col-12" style="font-weight: bold;">
-          Top Countries
+    <div class="clr-col-lg-6 clr-col-md-12 clr-col-sm-12 resize" style="margin-top: 4.5rem; flex-direction: row;">
+
+      <div class="clr-col-lg-6 clr-col-md-12 clr-col-sm-12">
+        <div class="clr-row">
+          <div class="clr-col-12" style="font-weight: bold;">
+            Top Countries
+          </div>
+        </div>
+
+        <div class="clr-row" style="justify-content: flex-start;"
+          *ngFor="let country of allCountries | slice:0:3; let i=index">
+
+          <div class="clr-col-12">
+            <a href="..." class="card clickable">
+              <div class="card-img">
+              </div>
+              <div class="card-block" style="display: flex;">
+
+                <div class="clr-col" style="text-align: left;">
+                  <div class="clr-row" style="color: #C1C5CF; font-weight: bold; justify-content: left;">
+                    {{country.country}}</div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
+                    {{country.cases | number:'':''}} - Affected </div>
+                  <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
+                    {{country.recovered | number:'':''}} - Recovered
+                  </div>
+                </div>
+
+                <div class="clr-col">
+                  <img src="https://img.icons8.com/nolan/64/bullish.png" />
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="clr-row" style="justify-content: flex-start;"
-        *ngFor="let country of allCountries | slice:0:3; let i=index">
-        <div class="clr-col-5">
-          <a href="..." class="card clickable">
-            <div class="card-img">
-            </div>
-            <div class="card-block" style="display: flex;">
+      <div class="clr-col-lg-6 clr-col-md-12 clr-col-sm-12">
+        <div class="clr-col-11">
 
-              <div class="clr-col" style="text-align: left;">
-                <div class="clr-row" style="color: #C1C5CF; font-weight: bold; justify-content: left;">
-                  {{country.country}}</div>
-                <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
-                  {{country.cases | number:'':''}} - Affected </div>
-                <div class="clr-row" style="color: #36373F; font-weight: bold; justify-content: left;">
-                  {{country.recovered | number:'':''}} - Recovered
-                </div>
-              </div>
-
-              <div class="clr-col">
-                <img src="https://img.icons8.com/nolan/64/bullish.png" />
-              </div>
+          <div class="clr-row">
+            <div class="clr-col-12" style="font-weight: bold;">
+              Live Reports
             </div>
-          </a>
+          </div>
+
+          <clr-datagrid>
+            <clr-dg-column>Flag</clr-dg-column>
+            <clr-dg-column>Country</clr-dg-column>
+            <clr-dg-column>Case</clr-dg-column>
+            <clr-dg-column>Critical</clr-dg-column>
+
+            <clr-dg-row *clrDgItems="let country of allCountries">
+              <clr-dg-cell><img src="{{country.countryInfo.flag}}" alt="{{country.country}}"
+                  style="width: 1rem; height: 1rem;"></clr-dg-cell>
+              <clr-dg-cell>{{country.country}}</clr-dg-cell>
+              <clr-dg-cell>{{country.cases}}</clr-dg-cell>
+              <clr-dg-cell>{{country.critical}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <!-- <clr-dg-footer>{{country.length}} countries</clr-dg-footer> -->
+            <clr-dg-footer>
+              <clr-dg-pagination #pagination [clrDgPageSize]="8">
+                <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Countries per page</clr-dg-page-size>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+                of {{pagination.totalItems}} countries
+              </clr-dg-pagination>
+            </clr-dg-footer>
+          </clr-datagrid>
         </div>
-        <div class="clr-col-6"></div>
       </div>
 
     </div>
